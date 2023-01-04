@@ -27,7 +27,7 @@ const NoticiaNueva = ()=>{
             <div className="form">
                 <input 
                 placeholder="Titulo de la noticia..."
-                autocomplete="off"
+                autoComplete="off"
                 type="text" 
                 name="Titulo"
                 onChange={(e)=>{
@@ -35,7 +35,7 @@ const NoticiaNueva = ()=>{
                 }}/>
                 <textarea 
                 placeholder="Inserte texto aqui..."
-                autocomplete="off"
+                autoComplete="off"
                 type="text"
                 name="Informacion"
                 onChange={(e)=>{
@@ -53,6 +53,7 @@ const NoticiaNueva = ()=>{
                     <option value="Deportes">Deportes</option>
                     <option value="Sociedad">Sociedad</option>
                     <option value="Cultura">Cultura</option>
+                    <option value="MedioAmbiente">Medio ambiente</option>
                 </select>
                 <button onClick={enviarNoticia}>Enviar</button>
             </div>

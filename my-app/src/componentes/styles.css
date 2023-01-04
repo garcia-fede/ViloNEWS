@@ -6,35 +6,292 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.navSize{
-    padding: 0;
-    width: 80vw;
-    margin:0 auto;
-    height: 15vh;
-    background:white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.116);
+:root{
+    --vilo_verde: #8CB24C;
+    --vilo_violeta: #772C7F;
+    --vilo_celeste: #009DE1;
+    --texto_autor: #818181;
+}
+
+/*---------------- NavBar ----------------------*/
+
+.topLine{
+    height: 5vh;
+    width: 100%;
+    background: black;
+    color: rgba(255, 255, 255, 0.829);
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    padding-left: 15px;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.topLine ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 9vw;
+}
+
+.topLine ul li{
+    margin-right: 25px;
+    list-style: none;
+    font-size:0.85rem
+}
+
+.topLine ul li:nth-child(n+4){
+    float: right;
+}
+
+.redes{
+    position: absolute;
+    display: flex;
+    right: 200px;
+}
+
+.icon{
+    width: 15px;
+    filter: invert(1);
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+
+.navBar{
+    padding: 0;
+    width: 100%;
+    margin:0 auto;
+    height: 10vh;
+    background:white;
+    display: flex;
     align-items: center;
 }
 
-.navSize li{
+.navBar li{
     list-style: none;
+    margin: 0 20px;
 }
 
-.navSize li a{
+.navBar li a{
     color: black;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navBar li a:hover{
+    border-bottom: 1px solid black;
+}
+
+.navBar div{
+    margin: 0 5vw 0 10vw;
+}
+
+#LOGO{
+    aspect-ratio: 1;
+    height: 70px;
+}
+
+#hamburger{
+    display: none;
+}
+
+/*---------------- Fin NavBar ----------------------*/
+
+/*---------------- Landing Page --------------------*/
+
+#Ola1{
+    position: absolute;
+    left: 0;
+    bottom: 95px;
+    z-index: -5;
+}
+#Ola2{
+    position: absolute;
+    left: 0;
+    bottom: 95px;
+    z-index: -4;
+}
+#Ola3{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: -4;
+}
+
+.landingContainer{
+    /* background: #8db24ce1; */
+    background: #121212b7;
+    padding: 50px 10%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    color: white;
+}
+
+.ultimaNoticiaContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ultimaNoticiaContainer h2{
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+}
+
+.ultimaNoticiaContainer h3{
+    position: absolute;
+    left: 50px;
+    bottom: 140px;
     text-transform: uppercase;
 }
 
-.noticiasList{
-    margin-top: 15px;
+.otrasNoticiasContainer{
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
+
+.noticiaPequeña{
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    font-size: 0.75rem;
+}
+
+.noticiaPequeña a{
+    text-decoration: none;
+    color: white;
+}
+
+.previewNoticia{
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.searchTag{
+    padding: 5px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    color: white;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.searchTag:hover{
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.DeportesTag{
+    background: var(--vilo_verde);
+}
+
+.MedioAmbienteTag{
+    background: var(--vilo_verde);
+}
+
+.PoliticaTag{
+    background: var(--vilo_violeta);
+}
+
+.SociedadTag{
+    background: var(--vilo_violeta);
+}
+
+.CulturaTag{
+    background: var(--vilo_celeste);
+}
+
+/*---------------- Fin Landing Page --------------------*/
+
+/*---------------- Zona categorias y noticias medianas ---------------------*/
+
+.noticiasList{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.noticiaMediana{
+    width: 60%;
+    padding: 12.5px 0;
+    display: flex;
+    gap: 25px;
+    font-size: 0.75rem;
+    height: 250px;
+    white-space: pre-wrap;
+    overflow-y: hidden;
+    border-bottom: 0.25px solid rgba(0, 0, 0, 0.178);
+    border-top: 0.25px solid rgba(0, 0, 0, 0.178);
+    align-items: center;
+}
+
+.noticiaMediana img{
+    border-radius: 5px;
+}
+
+.noticiaMediana .searchTag{
+    margin-top: 20px;
+}
+
+.noticiaMediana .tituloMediano{
+    font-size: 1.5rem;
+}
+
+.noticiaMediana button{
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 15px;
+    height: 30px;
+    width: 150px;
+    border: none;
+    color: black;
+    background: none;
+    transition: 0.5s;
+}
+
+.noticiaMediana button:hover{
+    cursor: pointer;
+    scale: 1.025;
+}
+
+.noticiaMediana .fecha{
+    margin: 10px 0;
+    font-size: 1rem;
+    color: var(--texto_autor);
+    font-weight: 400;
+}
+
+.noticiaMediana .info{
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #494E51;
+    height: 50px;
+    overflow: hidden;
+}
+
+.noticiaMediana a{
+    text-decoration: none;
+    color: black;
+}
+
+/*---------------- Fin categorias y noticias medianas ---------------------*/
 
 .noticiaContainer{
     height: 200px;
@@ -46,6 +303,9 @@
     border: 1px solid;
     border-radius: 5px;
 }
+
+
+
 
 .noticiaDetalle{
     overflow-y: auto;
@@ -132,4 +392,49 @@
     width: 75px;
     font-size: 1rem;
 }
+
+
+
+/*------------ Media queries ---------------*/
+
+@media (max-width: 950px) {
+    /*----NavBar----*/
+    .navBar{
+        flex-direction: column;
+        background: white;
+        z-index: 5;
+        position: fixed;
+        min-height: 50px;
+        height: auto;
+        top: 0;
+    }
+    .navBar img{
+        display: none;
+    }
+    .navBar li{
+        margin:2.5px 0;
+    }
+
+    #hamburger{
+        display: block;
+    }
+
+    .navBar .item{
+        display: none;
+    }
+    /*----Categorias----*/
+
+    .noticiaMediana img{
+        width: 700px;
+    }
+
+    .noticiaMediana{
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+    }
+
+    /*----Fin Categorias----*/
+}
+
 

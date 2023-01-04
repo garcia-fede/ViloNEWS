@@ -1,4 +1,4 @@
-import Noticia from "./Noticia"
+import NoticiaMediana from "./NoticiaMediana"
 import { useParams } from "react-router-dom"
 import { useState,useEffect } from "react"
 import Axios from "axios"
@@ -17,10 +17,9 @@ const NoticiasListContainer = () =>{
     return(
         <>
             <main>
-                <h1>{categoria}</h1>
                 <div className="noticiasList">
-                {noticias.map(data=>{
-                    return <Noticia  key={data.idnoticia} noticia = {data} />
+                {noticias.map(noticia=>{
+                    return <NoticiaMediana key={noticia.idnoticia} noticia = {noticia} />
                 })}
                 </div>
             </main>
