@@ -8,7 +8,6 @@ import email from "../imagenes/email.png"
 
 const NavBar = () => {
     let hamburger = true;
-    let ancho;
     const items = document.getElementsByClassName("item")
     window.addEventListener("resize",()=>{
         if(window.innerWidth>950){
@@ -63,10 +62,10 @@ const NavBar = () => {
                 <input type="checkbox" name="" id="hamburger" onClick={toggleHamburger} />
                 <div><Link to="/"><img src={LOGO} alt="logo" id="LOGO"/></Link></div>
                 <li className="item"><Link to="/">Inicio</Link></li>
-                <li className="item"><Link to="Categoria/Deportes">Deportes</Link></li>
                 <li className="item"><Link to="Categoria/Politica">Politica</Link></li>
-                <li className="item"><Link to="Categoria/Cultura">Cultura</Link></li>
+                <li className="item"><Link to="Categoria/Deportes">Deportes</Link></li>
                 <li className="item"><Link to="Categoria/Sociedad">Sociedad</Link></li>
+                <li className="item"><Link to="Categoria/Cultura">Cultura</Link></li>
                 <li className="item"><Link to="Categoria/MedioAmbiente">Medio ambiente</Link></li>
                 {/* <li className="item"><Link to="Login/">Log in</Link></li> */}
                 <li className="item"><Link to="NoticiaNueva/">Post</Link></li>

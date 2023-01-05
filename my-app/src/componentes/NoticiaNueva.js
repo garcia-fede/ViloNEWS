@@ -1,17 +1,24 @@
 import { useState,useEffect } from "react"
 import Axios from 'axios'
+import moment from "moment";
+import 'moment/locale/es'; //Importar moment en español
 
 const NoticiaNueva = ()=>{
+    moment.locale('es')
     const [titulo,setTitulo] = useState("")
     const [info,setInfo] = useState("")
     const [categoria,setCategoria] = useState("")
 
     const enviarNoticia = ()=>{
+        let fecha = moment().format("LL")
+        let fechaformato = moment().format()
         if(categoria!=""){
             Axios.post("http://localhost:3001/api/insert",{
                 titulo: titulo, 
                 info: info, 
-                categoria: categoria
+                categoria: categoria,
+                fechatexto: fecha,
+                fechaformato: fechaformato
             }).then(()=>{
                 alert("Noticia almacenada en la base de datos")
             }).catch(()=>{

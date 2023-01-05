@@ -210,11 +210,11 @@
 }
 
 .SociedadTag{
-    background: var(--vilo_violeta);
+    background: var(--vilo_celeste);
 }
 
 .CulturaTag{
-    background: var(--vilo_celeste);
+    background: var(--vilo_violeta);
 }
 
 /*---------------- Fin Landing Page --------------------*/
@@ -334,7 +334,7 @@
     max-width: 1200px;
     font-size: 1.75rem;
 }
-
+/*--- Subir noticia ---------*/
 .form{
     overflow-y: auto;
     width: 80%;
@@ -348,6 +348,14 @@
 .form label{
     margin: 5px 0 0 15px;
     font-size:1.5rem;
+    align-self: flex-start;
+}
+
+.form .upload{
+    width: 500px;
+    padding: 0 15px;
+    margin: 5px 0;
+    font-size: 1.25rem;
     align-self: flex-start;
 }
 
@@ -393,6 +401,8 @@
     font-size: 1rem;
 }
 
+/*--- Fin subir noticia ---------*/
+
 
 
 /*------------ Media queries ---------------*/
@@ -425,7 +435,7 @@
     /*----Categorias----*/
 
     .noticiaMediana img{
-        width: 700px;
+        width: 80vw;
     }
 
     .noticiaMediana{
