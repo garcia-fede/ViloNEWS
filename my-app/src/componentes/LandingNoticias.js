@@ -27,7 +27,7 @@ const LandingNoticias = () => {
                     <path fill="#772C7F" fillOpacity={1} d="M0,128L48,133.3C96,139,192,149,288,170.7C384,192,480,224,576,240C672,256,768,256,864,224C960,192,1056,128,1152,138.7C1248,149,1344,235,1392,277.3L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
                 </svg>
                     <div className="ultimaNoticiaContainer">
-                        <img src="https://via.placeholder.com/800x450" alt="" />
+                        <img src="https://unsplash.it/800/450" alt="" />
                         {noticias.slice(Math.max(noticias.length - 1)).map(noticia=>{
                             return <div key={noticia.idnoticia}><h2 style={{ fontSize: 30 }}>{noticia.titulo}</h2><Link to={`Categoria/${noticia.categoria}`}><h3 className={`searchTag ${noticia.categoria+"Tag"}`}>{noticia.categoria}</h3></Link></div>                           
                         })}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Rowdies:wght@300;700&display=swap');
 
 *{
     margin: 0;
@@ -11,6 +11,7 @@
     --vilo_violeta: #772C7F;
     --vilo_celeste: #009DE1;
     --texto_autor: #818181;
+    --texto_informacion: #494E51;
 }
 
 /*---------------- NavBar ----------------------*/
@@ -293,6 +294,7 @@
 
 /*---------------- Fin categorias y noticias medianas ---------------------*/
 
+/*---------------- Noticia en detalle -------------------------------------*/
 .noticiaContainer{
     height: 200px;
     width: 200px;
@@ -304,36 +306,63 @@
     border-radius: 5px;
 }
 
-
-
-
 .noticiaDetalle{
+    overflow-x: hidden;
     overflow-y: auto;
-    width: 80%;
-    margin: 0 10%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     white-space: pre-wrap;
+    margin-bottom: 50px;
 }
 
 .noticiaDetalle h1{
-    margin-bottom: 25px;
-    align-self: flex-start;
-    margin-left: 35px;
+    align-self: center;
+    position: absolute;
+    top: 200px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    font-family: 'Rowdies', cursive;
+    letter-spacing: 2px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 0 10px;
 }
 
-.noticiaDetalle h2{
+.noticiaDetalle .searchTag{
+    align-self: center;
+    position: absolute;
+    margin: 0;
+    top: 160px;    
+}
+
+.noticiaDetalle .fecha{
+    top: 270px;
+    position: absolute;
+    color: white;
     font-size: 1rem;
-    align-self: flex-end;
-    margin: 25px 0 0 12.5px;
+    text-shadow: rgba(0, 0, 0, 1) 0px 0 10px;
+    font-weight: 300;
+    padding: 5px 30px;
+    border: 1px solid white;
+    background: rgba(2, 2, 2, 0.2);
+}
+
+.noticiaDetalle img{
+    margin-bottom: 75px;
 }
 
 .noticiaDetalle p{
+    margin: 10px 25% 0 25%;
     max-width: 1200px;
-    font-size: 1.75rem;
+    font-size: 18px;
+    line-height: 30px;
+    color: var(--texto_informacion);
+    font-weight: 400;
 }
+/*-----------Fin noticia en detalle ----------------*/
+
 /*--- Subir noticia ---------*/
 .form{
     overflow-y: auto;
@@ -403,35 +432,62 @@
 
 /*--- Fin subir noticia ---------*/
 
-
-
 /*------------ Media queries ---------------*/
+
+@media (max-width: 1200px) {
+    .noticiaDetalle p{
+        line-height: 27px;
+        font-size: 16px;
+        margin: 10px 15% 0 15%;
+    }
+}
 
 @media (max-width: 950px) {
     /*----NavBar----*/
     .navBar{
         flex-direction: column;
-        background: white;
+        background: rgb(0, 0, 0);
         z-index: 5;
         position: fixed;
         min-height: 50px;
         height: auto;
         top: 0;
+        color: white;
     }
     .navBar img{
         display: none;
     }
     .navBar li{
-        margin:2.5px 0;
+        margin:5px 0;
+    }
+    .navBar li a{
+        color: white;
     }
 
-    #hamburger{
+    .navBar label{
+        margin-top: 7.5px;
+        cursor: pointer;
+    }
+
+    .hamburger_button span{
         display: block;
+        margin: 5px auto;
+        width: 27.5px;
+        height: 5px;
+        background: var(--text_and_details);
+        border-radius: 100px;
+        background: white;
+    }
+
+    #hamburger:checked ~ .hamburger_button{
+        transition: 0.5s;
+        transform: rotate(180deg);
     }
 
     .navBar .item{
         display: none;
     }
+
     /*----Categorias----*/
 
     .noticiaMediana img{
@@ -443,8 +499,25 @@
         width: 80%;
         height: auto;
     }
+    
+    /*--------Detalle-------*/
 
-    /*----Fin Categorias----*/
+    .noticiaDetalle img{
+        margin-bottom: 25px;
+    }
+    
+    .noticiaDetalle p{
+        line-height: 27px;
+        font-size: 16px;
+        margin: 10px 15% 0 15%;
+    }
 }
 
-
+@media (max-width: 650px) {
+    /*--------Detalle-------*/
+    .noticiaDetalle p{
+        line-height: 27px;
+        font-size: 16px;
+        margin: 10px 5% 0 5%;
+    }
+}

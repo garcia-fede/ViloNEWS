@@ -8,7 +8,7 @@ const NoticiaMediana = ({noticia}) =>{
     return (
         <>
             <div className="noticiaMediana">
-                <Link to={ruta}><img src="https://via.placeholder.com/200" alt="" /></Link>
+                <Link to={ruta}><img src="https://unsplash.it/200/200" alt="" /></Link>
                 <div className="previewNoticia">
                     <h2 className={`searchTag ${noticia.categoria+"Tag"}`}>{noticia.categoria}</h2>
                     <Link to={ruta}><h2 className="tituloMediano">{noticia.titulo}</h2></Link>

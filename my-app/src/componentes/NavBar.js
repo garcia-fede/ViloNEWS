@@ -1,12 +1,16 @@
 import {Link} from "react-router-dom"
+import { useState,useEffect } from "react"
 import LOGO from "../imagenes/LOGO.png"
 import twitter from "../imagenes/twitter.png"
 import instagram from "../imagenes/instagram.png"
 import linkedin from "../imagenes/linkedin.png"
 import email from "../imagenes/email.png"
+import moment from "moment";
+import 'moment/locale/es'; //Importar moment en español
 
 
 const NavBar = () => {
+    moment.locale('es')
     let hamburger = true;
     const items = document.getElementsByClassName("item")
     window.addEventListener("resize",()=>{
@@ -47,7 +51,7 @@ const NavBar = () => {
         <>
             <div className="topLine">
                 <ul>
-                    <li>Fecha</li>
+                    <li>{moment().format('LL')}</li>
                     <li>Contacto</li>
                     <li>FAQ</li>
                     <div className="redes">
@@ -59,7 +63,12 @@ const NavBar = () => {
                 </ul>
             </div>
             <ul className="navBar">
-                <input type="checkbox" name="" id="hamburger" onClick={toggleHamburger} />
+                <input type="checkbox" id="hamburger" onClick={toggleHamburger} />
+                <label htmlFor="hamburger" className="hamburger_button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
                 <div><Link to="/"><img src={LOGO} alt="logo" id="LOGO"/></Link></div>
                 <li className="item"><Link to="/">Inicio</Link></li>
                 <li className="item"><Link to="Categoria/Politica">Politica</Link></li>
