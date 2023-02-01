@@ -8,7 +8,6 @@ const NoticiaNueva = ()=>{
     const [titulo,setTitulo] = useState("")
     const [info,setInfo] = useState("")
     const [categoria,setCategoria] = useState("")
-
     const enviarNoticia = ()=>{
         let fecha = moment().format("LL")
         let fechaformato = moment().format()

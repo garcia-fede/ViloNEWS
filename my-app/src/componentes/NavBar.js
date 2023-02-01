@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom"
-import { useState,useEffect } from "react"
 import LOGO from "../imagenes/LOGO.png"
 import twitter from "../imagenes/twitter.png"
 import instagram from "../imagenes/instagram.png"

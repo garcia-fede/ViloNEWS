@@ -12,17 +12,22 @@ const db = mysql.createPool({
 })
 
 app.use(cors())
-app.use(express.json())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json({limit: '50mb',parameterLimit:5000000}));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:5000000}));
+
 
 app.post("/api/insert",(req, res)=> {
     const titulo = req.body.titulo
     const info = req.body.info
     const categoria = req.body.categoria
+    const fechatexto = req.body.fechatexto
+    const fechaformato = req.body.fechaformato
+    const imagen = req.body.imagen
 
-    const sqlInsert = "INSERT INTO noticias (titulo, info, categoria) VALUES (?,?,?)"
-    db.query(sqlInsert,[titulo,info,categoria],(err, result)=>{
-        res.send("Realice un query a la bd")
+    const sqlInsert = "INSERT INTO noticias (titulo, info, categoria, imagen, fechatexto, fechaformato) VALUES (?,?,?,?,?,?)"
+    db.query(sqlInsert,[titulo,info,categoria,imagen,fechatexto,fechaformato],(err, result)=>{
+        res.send("Query realizada con exito")
     })
 })
 
@@ -34,7 +39,6 @@ app.get("/api/get",(req,res)=>{
 })
 
 var PORT = 3001;
-//https://localhost:3001
 app.listen(PORT,()=>{
     console.log("Running on port 3001")
 })

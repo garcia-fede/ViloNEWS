@@ -1,5 +1,6 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import '../componentes/styles.css'
+import Editor from "./Editor"
 import NoticiaNueva from "./NoticiaNueva"
 import NavBar from './NavBar'
 import LandingNoticias from './LandingNoticias'
@@ -17,7 +18,8 @@ const App = () => {
                 <Route path="Categoria/:categoria" element={<NoticiasListContainer />} />
                 <Route path="Noticia/:idnoticia" element={<NoticiaDetalleContainer />} />
                 <Route path="Login" element={<Sesion />}/>
-                <Route path="NoticiaNueva" element={<NoticiaNueva />}/>
+                {/* <Route path="NoticiaNueva" element={<NoticiaNueva />}/> */}
+                <Route path="NoticiaNueva" element={<Editor />}/>
             </Routes>   
         </BrowserRouter>
     </>

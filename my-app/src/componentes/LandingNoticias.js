@@ -29,7 +29,7 @@ const LandingNoticias = () => {
                     <div className="ultimaNoticiaContainer">
                         <img src="https://unsplash.it/800/450" alt="" />
                         {noticias.slice(Math.max(noticias.length - 1)).map(noticia=>{
-                            return <div key={noticia.idnoticia}><h2 style={{ fontSize: 30 }}>{noticia.titulo}</h2><Link to={`Categoria/${noticia.categoria}`}><h3 className={`searchTag ${noticia.categoria+"Tag"}`}>{noticia.categoria}</h3></Link></div>                           
+                            return <div key={noticia.idnoticia}><Link to={`/Noticia/${noticia.idnoticia}`}><h2 style={{ fontSize: 30 }}>{noticia.titulo}</h2></Link><Link to={`Categoria/${noticia.categoria}`}><h3 className={`searchTag ${noticia.categoria+"Tag"}`}>{noticia.categoria}</h3></Link></div>                           
                         })}
                     </div>
                     <div className="otrasNoticiasContainer">

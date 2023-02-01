@@ -18,14 +18,14 @@ const NoticiaDetalleContainer = ()=>{
     },[])    
 
     return(
-        <>
+        <main>
             <div className="noticiasList">
                     {noticias.map(noticia=>{
                         return <NoticiaDetalle key={noticia.idnoticia} noticia = {noticia} />
                     })}
                     
             </div>
-        </>
+        </main>
     )
 }
 
